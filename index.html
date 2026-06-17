@@ -7,20 +7,16 @@
 
 <title>LustreLane Gems | Coming Soon</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 :root{
-    --gold:#c8a96b;
-    --gold-light:#e3c98f;
-    --emerald-dark:#021512;
-    --emerald:#06342d;
-    --emerald-light:#0b4c3c;
-    --ivory:#f4f1ea;
+    --gold:#C9A15F;
+    --gold-light:#E6C98D;
+    --emerald:#052D27;
+    --emerald-dark:#021612;
+    --ivory:#F4F0E8;
 }
 
 *{
@@ -30,243 +26,226 @@
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    height:100vh;
-    overflow:hidden;
     background:
     radial-gradient(circle at top,
-    var(--emerald-light) 0%,
-    var(--emerald) 35%,
-    var(--emerald-dark) 100%);
+    #0b4c3c 0%,
+    #06342d 40%,
+    #021512 100%);
     color:var(--ivory);
-    position:relative;
+    font-family:'Inter',sans-serif;
 }
 
-/* Heritage Glow */
-body::before{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    background:
-    radial-gradient(circle,
-    rgba(200,169,107,.12),
-    transparent 70%);
-    left:50%;
-    top:50%;
-    transform:translate(-50%,-50%);
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:30px 60px;
 }
 
-.header{
-    position:absolute;
-    top:30px;
-    left:50px;
+/* HEADER */
+
+header{
     display:flex;
     align-items:center;
-    gap:15px;
-    z-index:10;
+    gap:20px;
+    margin-bottom:40px;
 }
 
 .logo{
-    width:55px;
+    width:90px;
 }
 
 .brand{
     font-family:'Cormorant Garamond',serif;
-    font-size:32px;
+    font-size:52px;
     color:var(--gold-light);
-    letter-spacing:1px;
 }
 
-.main{
-    height:100vh;
-    display:flex;
-    justify-content:center;
+/* HERO */
+
+.hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
     align-items:center;
-    text-align:center;
-    padding:20px;
+    min-height:65vh;
 }
 
-.content{
-    max-width:760px;
-}
-
-.kicker{
-    color:var(--gold);
-    letter-spacing:4px;
-    font-size:13px;
-    margin-bottom:18px;
-}
-
-h1{
+.content h1{
     font-family:'Cormorant Garamond',serif;
-    font-size:84px;
-    font-weight:600;
-    line-height:.95;
+    font-size:92px;
+    line-height:.9;
     margin-bottom:20px;
 }
 
 .tagline{
-    font-family:'Cormorant Garamond',serif;
     color:var(--gold);
-    font-size:28px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:34px;
     margin-bottom:25px;
 }
 
-.divider{
+.line{
     width:120px;
     height:1px;
     background:var(--gold);
-    margin:0 auto 30px auto;
+    margin-bottom:30px;
 }
 
-.description{
-    font-size:18px;
+.content p{
+    font-size:20px;
     line-height:1.9;
-    max-width:650px;
-    margin:auto;
-    color:rgba(255,255,255,.88);
+    color:rgba(255,255,255,.9);
+    margin-bottom:35px;
 }
 
 .waitlist{
-    margin-top:40px;
     display:flex;
-    justify-content:center;
-    gap:12px;
+    gap:15px;
     flex-wrap:wrap;
 }
 
-input{
-    width:350px;
-    padding:16px 20px;
+.waitlist input{
+    flex:1;
+    min-width:260px;
+    padding:16px 22px;
     border-radius:40px;
-    border:1px solid rgba(200,169,107,.35);
+    border:1px solid rgba(201,161,95,.35);
     background:rgba(255,255,255,.05);
     color:white;
-    outline:none;
 }
 
-input::placeholder{
-    color:rgba(255,255,255,.5);
-}
-
-button{
+.waitlist button{
     padding:16px 28px;
     border-radius:40px;
     border:1px solid var(--gold);
     background:transparent;
     color:var(--gold);
     cursor:pointer;
-    transition:.3s;
-    letter-spacing:1px;
 }
 
-button:hover{
+.waitlist button:hover{
     background:var(--gold);
-    color:#02201b;
+    color:#021612;
 }
 
-.success{
-    display:none;
-    margin-top:25px;
+.hero-image{
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+}
+
+.hero-image img{
+    width:100%;
+    display:block;
+}
+
+/* GALLERY */
+
+.gallery-title{
+    text-align:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    margin-top:40px;
+    margin-bottom:30px;
     color:var(--gold-light);
-    font-size:16px;
 }
 
-.benefits{
-    margin-top:25px;
-    color:rgba(255,255,255,.65);
-    font-size:13px;
-    letter-spacing:2px;
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:translateY(-5px);
 }
 
 .footer{
-    position:absolute;
-    bottom:25px;
-    width:100%;
     text-align:center;
+    margin-top:50px;
+    padding-bottom:30px;
 }
 
 .socials a{
     color:var(--gold);
     text-decoration:none;
-    margin:0 12px;
+    margin:0 15px;
 }
 
-.contact{
-    margin-top:12px;
+.email{
+    margin-top:15px;
 }
 
-.contact a{
-    color:rgba(255,255,255,.85);
+.email a{
+    color:white;
     text-decoration:none;
 }
 
-@media(max-width:768px){
+/* MOBILE */
 
-.header{
-left:20px;
-top:20px;
+@media(max-width:900px){
+
+.container{
+padding:25px;
 }
 
 .brand{
-font-size:24px;
+font-size:34px;
 }
 
 .logo{
-width:45px;
+width:70px;
 }
 
-h1{
-font-size:52px;
+.hero{
+grid-template-columns:1fr;
+}
+
+.content h1{
+font-size:60px;
 }
 
 .tagline{
-font-size:22px;
+font-size:26px;
 }
 
-.description{
-font-size:16px;
-line-height:1.7;
+.gallery{
+grid-template-columns:1fr;
 }
 
-input{
-width:100%;
+.gallery img{
+height:280px;
 }
 
-.waitlist{
-flex-direction:column;
-}
-
-button{
-width:100%;
-}
 }
 
 </style>
 </head>
-
 <body>
 
-<header class="header">
+<div class="container">
 
-    <!-- Use ONLY the lotus symbol PNG here -->
-    <img src="lotus.png" class="logo" alt="LustreLane">
+<header>
 
-    <div class="brand">
-        LustreLane Gems
-    </div>
+<img src="lotus.png" class="logo">
+
+<div class="brand">
+LustreLane Gems
+</div>
 
 </header>
 
-<main class="main">
+<section class="hero">
 
 <div class="content">
-
-<div class="kicker">
-JAIPUR • INDIA
-</div>
 
 <h1>Coming Soon</h1>
 
@@ -274,77 +253,65 @@ JAIPUR • INDIA
 Jaipur Heritage • Timeless Elegance
 </div>
 
-<div class="divider"></div>
+<div class="line"></div>
 
-<div class="description">
+<p>
+Discover a curated collection of handcrafted gemstone jewellery inspired by Jaipur's centuries-old gemstone legacy.
 
-Inspired by Jaipur's rich gemstone legacy and generations of craftsmanship,
-LustreLane presents a curated collection of fine gemstone jewellery designed
-to become modern heirlooms.
+Designed to become modern heirlooms and treasured for generations.
+</p>
 
-<br><br>
-
-Request early access to discover our inaugural collection before the public launch.
-
-</div>
-
-<form class="waitlist" id="waitlistForm">
+<form class="waitlist">
 
 <input
 type="email"
-placeholder="Enter your email address"
-required>
+placeholder="Enter your email address">
 
-<button type="submit">
-REQUEST EARLY ACCESS
+<button>
+Join Founding Collectors
 </button>
 
 </form>
 
-<div class="success" id="successMessage">
-
-Thank you for your interest in LustreLane Gems.
-
-You will receive priority access to our launch collection and exclusive updates.
-
 </div>
 
-<div class="benefits">
-EARLY ACCESS • LIMITED COLLECTIONS • FOUNDING COLLECTORS
+<div class="hero-image">
+<img src="hero.jpg" alt="">
 </div>
 
-</div>
+</section>
 
-</main>
+<h2 class="gallery-title">
+The World of LustreLane
+</h2>
 
-<footer class="footer">
+<section class="gallery">
+
+<img src="gem1.jpg">
+<img src="gem2.jpg">
+<img src="gem3.jpg">
+
+</section>
+
+<div class="footer">
 
 <div class="socials">
 <a href="#">Instagram</a>
 <a href="#">Pinterest</a>
 </div>
 
-<div class="contact">
+<div class="email">
 <a href="mailto:hello@lustrelane.in">
 hello@lustrelane.in
 </a>
 </div>
 
-</footer>
+</div>
 
-<script>
-
-document.getElementById("waitlistForm")
-.addEventListener("submit",function(e){
-
-e.preventDefault();
-
-document.getElementById("successMessage").style.display="block";
-
-});
-
-</script>
+</div>
 
 </body>
 </html>
 ```
+
+  
