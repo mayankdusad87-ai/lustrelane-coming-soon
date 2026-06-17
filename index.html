@@ -1,50 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>LustreLane Gems</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            background:#faf7f2;
-            text-align:center;
-            margin:0;
-        }
+<title>LustreLane Gems | Coming Soon</title>
 
-        h1{
-            font-size:48px;
-            margin-bottom:10px;
-        }
+<style>
+body{
+    margin:0;
+    font-family: Georgia, serif;
+    background:#0f2b24;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    text-align:center;
+}
 
-        p{
-            color:#666;
-            font-size:18px;
-        }
+.container{
+    max-width:700px;
+    padding:40px;
+}
 
-        .box{
-            max-width:600px;
-            padding:20px;
-        }
-    </style>
+.logo{
+    width:220px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:52px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#d9c18b;
+    margin-bottom:30px;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:16px;
+}
+
+button{
+    background:#c9a96a;
+    color:#0f2b24;
+    border:none;
+    padding:14px 30px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.small{
+    margin-top:20px;
+    color:#bdbdbd;
+    font-size:14px;
+}
+</style>
 </head>
+
 <body>
-    <div class="box">
-        <h1>LustreLane Gems</h1>
-        <p>Fine Gemstones & Handmade Jewelry</p>
 
-        <h2>✨ Coming Soon ✨</h2>
+<div class="container">
 
-        <p>
-            We're crafting something beautiful.
-            Follow our journey on Pinterest and Instagram.
-        </p>
+    <img src="logo.png" class="logo" alt="LustreLane Gems">
 
-        <p>hello@lustrelane.in</p>
+    <h1>Coming Soon</h1>
+
+    <p class="subtitle">
+        Jaipur Heritage • Timeless Elegance • Lustre That Lasts
+    </p>
+
+    <p>
+        Be among the first to discover our handcrafted gemstone jewelry.
+        Join our launch list and receive an exclusive
+        <strong>10% launch discount.</strong>
+    </p>
+
+    <form>
+        <input type="email"
+               placeholder="Enter your email address"
+               required>
+
+        <button type="submit">
+            Join the Launch List
+        </button>
+    </form>
+
+    <div class="small">
+        hello@lustrelane.in
     </div>
+
+</div>
+
 </body>
 </html>
