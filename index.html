@@ -1,73 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>LustreLane Gems | Coming Soon</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <style>
-body{
+
+*{
     margin:0;
-    font-family: Georgia, serif;
-    background:#0f2b24;
-    color:white;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(
+        135deg,
+        #01251f,
+        #05362f
+    );
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:100vh;
+    font-family:Georgia, serif;
+    color:white;
     text-align:center;
+    padding:30px;
 }
 
 .container{
-    max-width:700px;
-    padding:40px;
+    max-width:750px;
+    width:100%;
 }
 
 .logo{
     width:220px;
+    max-width:80%;
     margin-bottom:25px;
 }
 
 h1{
-    font-size:52px;
-    margin-bottom:10px;
+    font-size:68px;
+    margin-bottom:15px;
+    line-height:1;
 }
 
-.subtitle{
-    color:#d9c18b;
-    margin-bottom:30px;
+.tagline{
+    color:#d4b06a;
+    font-size:22px;
+    margin-bottom:35px;
+}
+
+.description{
+    font-size:24px;
+    line-height:1.5;
+    margin-bottom:35px;
+}
+
+.highlight{
+    color:#d4b06a;
+    font-weight:bold;
+}
+
+form{
+    margin-top:20px;
 }
 
 input{
     width:100%;
-    padding:14px;
+    padding:18px;
     border:none;
-    border-radius:8px;
-    margin-bottom:15px;
-    font-size:16px;
+    border-radius:10px;
+    font-size:18px;
+    margin-bottom:20px;
 }
 
 button{
-    background:#c9a96a;
-    color:#0f2b24;
+    background:#d4b06a;
+    color:#03231d;
     border:none;
-    padding:14px 30px;
-    border-radius:8px;
-    font-size:16px;
-    cursor:pointer;
+    padding:18px 40px;
+    border-radius:10px;
+    font-size:18px;
     font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
-    opacity:0.9;
+    transform:translateY(-2px);
 }
 
-.small{
-    margin-top:20px;
-    color:#bdbdbd;
+.success{
+    display:none;
+    margin-top:25px;
+    background:rgba(212,176,106,0.15);
+    border:1px solid #d4b06a;
+    border-radius:10px;
+    padding:18px;
+    color:#fff;
+}
+
+.email{
+    margin-top:30px;
+    font-size:18px;
+}
+
+.email a{
+    color:white;
+    text-decoration:none;
+}
+
+.socials{
+    margin-top:25px;
+}
+
+.socials a{
+    color:#d4b06a;
+    text-decoration:none;
+    margin:0 10px;
+    font-size:18px;
+}
+
+.footer{
+    margin-top:40px;
+    color:#b5b5b5;
     font-size:14px;
 }
+
+@media(max-width:768px){
+
+    h1{
+        font-size:48px;
+    }
+
+    .description{
+        font-size:20px;
+    }
+
+    .tagline{
+        font-size:18px;
+    }
+
+    button{
+        width:100%;
+    }
+
+}
+
 </style>
 </head>
 
@@ -75,35 +160,83 @@ button:hover{
 
 <div class="container">
 
-    <img src="logo.png" class="logo" alt="LustreLane Gems">
+    <!-- LOGO -->
+    <img src="logo.png" alt="LustreLane Gems" class="logo">
 
     <h1>Coming Soon</h1>
 
-    <p class="subtitle">
+    <div class="tagline">
         Jaipur Heritage • Timeless Elegance • Lustre That Lasts
-    </p>
+    </div>
 
-    <p>
-        Be among the first to discover our handcrafted gemstone jewelry.
-        Join our launch list and receive an exclusive
-        <strong>10% launch discount.</strong>
-    </p>
+    <div class="description">
+        Be among the first to discover our handcrafted gemstone jewellery.
+        Join our launch list and receive
+        <span class="highlight">exclusive launch offers</span>,
+        early access and special collector benefits.
+    </div>
 
-    <form>
-        <input type="email"
-               placeholder="Enter your email address"
-               required>
+    <form id="waitlistForm">
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            required
+        >
 
         <button type="submit">
             Join the Launch List
         </button>
+
     </form>
 
-    <div class="small">
-        hello@lustrelane.in
+    <div class="success" id="successMessage">
+
+        ✨ Thank you for joining the LustreLane launch list.
+
+        <br><br>
+
+        We are crafting something beautiful and will notify you when we launch.
+
+        <br><br>
+
+        Stay tuned for exclusive launch offers and first access to our collections.
+
+    </div>
+
+    <div class="email">
+        <a href="mailto:hello@lustrelane.in">
+            hello@lustrelane.in
+        </a>
+    </div>
+
+    <div class="socials">
+        <a href="#">Instagram</a> |
+        <a href="#">Pinterest</a>
+    </div>
+
+    <div class="footer">
+        © 2026 LustreLane Gems
     </div>
 
 </div>
+
+<script>
+
+document
+.getElementById("waitlistForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("waitlistForm").style.display = "none";
+
+    document.getElementById("successMessage").style.display = "block";
+
+});
+
+</script>
 
 </body>
 </html>
