@@ -6,10 +6,18 @@
 
 <title>LustreLane Gems | Coming Soon</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+
+:root{
+    --gold:#C8A96B;
+    --gold-light:#E0C48C;
+    --emerald-dark:#021612;
+    --emerald:#05342D;
+    --emerald-light:#0B4B3C;
+    --ivory:#F5F1E8;
+}
 
 *{
     margin:0;
@@ -18,202 +26,264 @@
 }
 
 body{
-    background:linear-gradient(
-        135deg,
-        #01251f,
-        #05362f
-    );
     min-height:100vh;
+    background:
+    radial-gradient(circle at top,
+    var(--emerald-light) 0%,
+    var(--emerald) 35%,
+    var(--emerald-dark) 100%);
+    color:var(--ivory);
     display:flex;
     justify-content:center;
     align-items:center;
-    font-family:Georgia, serif;
-    color:white;
-    text-align:center;
-    padding:30px;
+    padding:40px;
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(255,255,255,0.01),
+        rgba(255,255,255,0)
+    );
+    pointer-events:none;
 }
 
 .container{
-    max-width:750px;
-    width:100%;
+    max-width:760px;
+    text-align:center;
+    position:relative;
+    z-index:2;
 }
 
 .logo{
-    width:220px;
-    max-width:80%;
+    width:180px;
     margin-bottom:25px;
+    filter:
+        drop-shadow(0 0 20px rgba(200,169,107,0.15));
+}
+
+.brand{
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+    letter-spacing:2px;
+    color:var(--gold-light);
+    margin-bottom:10px;
 }
 
 h1{
-    font-size:68px;
-    margin-bottom:15px;
-    line-height:1;
+    font-family:'Cormorant Garamond', serif;
+    font-size:86px;
+    font-weight:600;
+    line-height:0.95;
+    margin-bottom:20px;
 }
 
 .tagline{
-    color:#d4b06a;
-    font-size:22px;
-    margin-bottom:35px;
+    color:var(--gold);
+    font-family:'Cormorant Garamond', serif;
+    font-size:28px;
+    margin-bottom:30px;
+}
+
+.divider{
+    width:120px;
+    height:1px;
+    background:var(--gold);
+    margin:0 auto 35px auto;
 }
 
 .description{
-    font-size:24px;
-    line-height:1.5;
-    margin-bottom:35px;
+    font-family:'Inter', sans-serif;
+    font-weight:300;
+    font-size:20px;
+    line-height:1.8;
+    max-width:650px;
+    margin:auto;
+    color:rgba(245,241,232,0.92);
 }
 
 .highlight{
-    color:#d4b06a;
-    font-weight:bold;
+    color:var(--gold-light);
 }
 
-form{
-    margin-top:20px;
+.waitlist{
+    margin-top:45px;
 }
 
 input{
     width:100%;
-    padding:18px;
-    border:none;
-    border-radius:10px;
-    font-size:18px;
-    margin-bottom:20px;
+    max-width:520px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(200,169,107,0.35);
+    border-radius:50px;
+    padding:18px 25px;
+    color:white;
+    font-size:16px;
+    outline:none;
+    backdrop-filter:blur(10px);
+}
+
+input::placeholder{
+    color:rgba(255,255,255,0.5);
 }
 
 button{
-    background:#d4b06a;
-    color:#03231d;
-    border:none;
-    padding:18px 40px;
-    border-radius:10px;
-    font-size:18px;
-    font-weight:bold;
+    margin-top:20px;
+    background:transparent;
+    color:var(--gold);
+    border:1px solid var(--gold);
+    padding:14px 34px;
+    border-radius:40px;
     cursor:pointer;
-    transition:.3s;
+    font-size:15px;
+    letter-spacing:1px;
+    transition:.3s ease;
 }
 
 button:hover{
-    transform:translateY(-2px);
+    background:var(--gold);
+    color:#021612;
+}
+
+.benefits{
+    margin-top:25px;
+    color:rgba(255,255,255,0.75);
+    font-size:14px;
+    letter-spacing:1px;
 }
 
 .success{
     display:none;
-    margin-top:25px;
-    background:rgba(212,176,106,0.15);
-    border:1px solid #d4b06a;
-    border-radius:10px;
-    padding:18px;
-    color:#fff;
-}
-
-.email{
     margin-top:30px;
-    font-size:18px;
+    border:1px solid rgba(200,169,107,0.35);
+    background:rgba(255,255,255,0.04);
+    border-radius:18px;
+    padding:20px;
+    line-height:1.7;
 }
 
-.email a{
-    color:white;
+.contact{
+    margin-top:50px;
+}
+
+.contact a{
+    color:var(--ivory);
     text-decoration:none;
 }
 
 .socials{
-    margin-top:25px;
+    margin-top:18px;
 }
 
 .socials a{
-    color:#d4b06a;
+    color:var(--gold);
     text-decoration:none;
-    margin:0 10px;
-    font-size:18px;
+    margin:0 12px;
 }
 
 .footer{
     margin-top:40px;
-    color:#b5b5b5;
-    font-size:14px;
+    color:rgba(255,255,255,0.45);
+    font-size:13px;
 }
 
 @media(max-width:768px){
 
     h1{
-        font-size:48px;
-    }
-
-    .description{
-        font-size:20px;
+        font-size:58px;
     }
 
     .tagline{
-        font-size:18px;
+        font-size:22px;
     }
 
-    button{
+    .description{
+        font-size:17px;
+    }
+
+    input{
         width:100%;
     }
-
 }
 
 </style>
 </head>
-
 <body>
 
 <div class="container">
 
-    <!-- LOGO -->
-    <img src="logo.png" alt="LustreLane Gems" class="logo">
+    <!-- Replace logo.png with your logo file -->
+    <img src="logo.png" class="logo" alt="LustreLane Gems">
+
+    <div class="brand">
+        LUSTRELANE GEMS
+    </div>
 
     <h1>Coming Soon</h1>
 
     <div class="tagline">
-        Jaipur Heritage • Timeless Elegance • Lustre That Lasts
+        Jaipur Heritage • Timeless Elegance
     </div>
+
+    <div class="divider"></div>
 
     <div class="description">
-        Be among the first to discover our handcrafted gemstone jewellery.
-        Join our launch list and receive
-        <span class="highlight">exclusive launch offers</span>,
-        early access and special collector benefits.
+        A curated collection of handcrafted gemstone jewellery inspired by
+        Jaipur's rich heritage and timeless artistry.
+
+        <br><br>
+
+        Join our <span class="highlight">Founding Collectors List</span>
+        for early access to exclusive pieces, launch privileges,
+        and first access to our inaugural collection.
     </div>
 
-    <form id="waitlistForm">
+    <form id="waitlistForm" class="waitlist">
 
         <input
             type="email"
-            id="email"
             placeholder="Enter your email address"
             required
         >
 
+        <br>
+
         <button type="submit">
-            Join the Launch List
+            JOIN FOUNDING COLLECTORS
         </button>
 
     </form>
 
     <div class="success" id="successMessage">
 
-        ✨ Thank you for joining the LustreLane launch list.
+        ✨ Thank you for joining LustreLane Gems.
 
         <br><br>
 
-        We are crafting something beautiful and will notify you when we launch.
+        We are delighted to welcome you as one of our Founding Collectors.
 
-        <br><br>
-
-        Stay tuned for exclusive launch offers and first access to our collections.
+        You will be among the first to receive exclusive launch updates,
+        early access invitations, and curated gemstone releases.
 
     </div>
 
-    <div class="email">
+    <div class="benefits">
+        EARLY ACCESS • LIMITED RELEASES • LAUNCH PRIVILEGES
+    </div>
+
+    <div class="contact">
         <a href="mailto:hello@lustrelane.in">
             hello@lustrelane.in
         </a>
-    </div>
 
-    <div class="socials">
-        <a href="#">Instagram</a> |
-        <a href="#">Pinterest</a>
+        <div class="socials">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+        </div>
     </div>
 
     <div class="footer">
@@ -223,19 +293,15 @@ button:hover{
 </div>
 
 <script>
-
 document
 .getElementById("waitlistForm")
 .addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    document.getElementById("waitlistForm").style.display = "none";
-
-    document.getElementById("successMessage").style.display = "block";
-
+    document.getElementById("waitlistForm").style.display="none";
+    document.getElementById("successMessage").style.display="block";
 });
-
 </script>
 
 </body>
